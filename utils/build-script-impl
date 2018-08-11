@@ -2572,7 +2572,7 @@ for host in "${ALL_HOSTS[@]}"; do
                     echo "Skipping reconfiguration of libicu"
                 fi
                 with_pushd "${LIBICU_BUILD_DIR}" \
-                    call make install
+                    call make install --jobs=${BUILD_JOBS}
                 ICU_LIBDIR="$(build_directory ${host} swift)/lib/swift/${SWIFT_HOST_VARIANT}/${SWIFT_HOST_VARIANT_ARCH}"
                 ICU_LIBDIR_STATIC="$(build_directory ${host} swift)/lib/swift_static/${SWIFT_HOST_VARIANT}"
                 ICU_LIBDIR_STATIC_ARCH="$(build_directory ${host} swift)/lib/swift_static/${SWIFT_HOST_VARIANT}/${SWIFT_HOST_VARIANT_ARCH}"
